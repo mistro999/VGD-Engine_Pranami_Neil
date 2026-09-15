@@ -5,7 +5,7 @@
 
 var startButton = new GameObject();
 startButton.width = 200;
-startButton.hitBoxWidth = 800;
+startButton.hitBoxWidth = 500;
 
 var menuBackground = new GameObject();
 
@@ -20,8 +20,9 @@ menuBackground.height = canvas.height;
 gameStates[`menu`] = function () {
   // Hover & click
   if (startButton.overlap(mouse)) {
-    if (mouse.pressed) { gameStates.changeState(`level1`); sounds.play(`Ashfall`, 0, loop = true); }
-    startButton.color = `yellow`;} else {
+    if (mouse.pressed) { gameStates.changeState(`level1`);  sounds.play(`blastsound`,loop = true); }
+    startButton.color = `yellow`;
+  } else {
     startButton.color = `red`;
   }
 
