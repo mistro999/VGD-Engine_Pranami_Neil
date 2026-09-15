@@ -29,6 +29,7 @@ ground.img.src = `images/ground.png`;
 
 // Simple platform
 var plat = new GameObject({ width: 256, height: 64, y: canvas.height - 200, color: "green", world: level });
+plat.img.src = `images/platform.png`;
 var leftBorder = new GameObject({ width: 50, height: canvas.height, world: level, x: 0 });
 
 // Foreground/Background cave tile grids (+ hit grid for collisions)
@@ -163,7 +164,10 @@ gameStates[`level1`] = function () {
   // --- Render order ---
   // Patterns
   var groundPattern = context.createPattern(ground.img, `repeat`);
-  ground.color = groundPattern; plat.color = groundPattern;
+  ground.color = groundPattern;
+  
+  var platPattern = context.createPattern(plat.img, `repeat`);
+  plat.color = platPattern;
 
   var skyPattern = context.createPattern(sky.img, `repeat`);
   sky.color = skyPattern;
