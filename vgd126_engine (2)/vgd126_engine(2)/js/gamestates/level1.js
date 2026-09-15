@@ -108,7 +108,7 @@ gameStates[`level1`] = function () {
   }
   if (keys[`W`] && wiz.canJump) {
     wiz.canJump = false; wiz.vy = wiz.jumpHeight; wiz.changeState(`jump`);
-    // sounds.play(`splode`,1)
+    sounds.play(`jump`,0)
   }
 
   // Shooting cadence
